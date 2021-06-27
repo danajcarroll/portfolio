@@ -167,14 +167,18 @@ section {
 /* *********** ABOUT ********** */
 #about {
     background-color: var(--white);
+    height: 85vh;
+}
+#about p {
+    padding-bottom: 1rem;
 }
 
 /* *********** CONNECT ********** */
 #contact {
     background-color: var(--black);
-    height: 80vh;
+    height: 90vh;
 }
 #contact h3 {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     color: var(--red);
 }
