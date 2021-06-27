@@ -1,28 +1,22 @@
-// let nav = document.querySelector('header');
-// let navHeight = nav.clientHeight;
-// let body = document.querySelector('body');
-// let bodyWidth = body.clientWidth;
+// 
+$("nav a[href^='#']").click(function (e) {
+    // prevents browser from doing a default click
+    e.preventDefault();
 
-// window.onload = function() {
-//     // gsap.from('header', {
-//     //     opacity: 0,
-//     //     y: -navHeight,
-//     //     duration: 0.75,
-//     //     delay: 0.5
-//     // });
-//     gsap.from('#homeText h2', {
-//         opacity: 0,
-//         x: bodyWidth,
-//         duration: 0.75,
-//         delay: 1
-//     });
-//     gsap.from('#homeText p', {
-//         opacity: 0,
-//         x: -bodyWidth,
-//         duration: 0.75,
-//         delay: 1
-//     });
-//     gsap.set('#home', {
-//         paddingTop: navHeight + 100
-//     });
-// }
+    // finds the position of selected link/ID
+    let idPos = $($(this).attr("href")).offset().top - $("header").innerHeight();
+
+    // animates to selected section position
+    $("body, html").animate({scrollTop: idPos}, 1000);
+});
+
+$("header a").click(function (e) {
+    // prevents browser from doing a default click
+    e.preventDefault();
+
+    // finds the position of selected link/ID
+    let idPos = $($(this).attr("href")).offset().top - $("header").innerHeight();
+
+    // animates to selected section position
+    $("body, html").animate({scrollTop: idPos}, 1000);
+});
