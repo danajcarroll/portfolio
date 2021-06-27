@@ -15,7 +15,6 @@
 
 body {
     background-color: var(--white);
-    /* background: url(../images/tonyThomasBackground.png); */
 }
 #logo {
     color: var(--black);
@@ -27,9 +26,15 @@ body {
     color: var(--red);
     font-size: 1.1rem;
     padding: 1rem 1rem;
+    transition: 1s ease;
 }
 a {
     text-decoration: none;
+}
+.active {
+    color: var(--black);
+    font-size: 1.15rem;
+    transition: 1s ease;
 }
 
 /* *************** MOBILE *************** */
@@ -174,11 +179,11 @@ section {
 }
 
 /* *********** CONNECT ********** */
-#contact {
+#connect {
     background-color: var(--black);
     height: 90vh;
 }
-#contact h3 {
+#connect h3 {
     font-size: 1.75rem;
     color: var(--red);
 }
