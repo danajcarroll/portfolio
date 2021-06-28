@@ -58,11 +58,21 @@ section {
 }
 /* *********** HOME ********** */
 #home {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 20vh 30vh 20vh;
-    height: 85vh;
-    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    padding-top: 30vh;
+}
+.flex-gap {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+#homeText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 #homeText h2,
 #homeText p {
@@ -73,30 +83,104 @@ section {
     color: var(--black);
 }
 #homeText p {
-    color: var(--orange);
+    color: var(--red);
     font-size: 1.25rem;
+    width: 18ch;
 }
-#homeTitle {
-    -webkit-text-stroke: 1px var(--black);
-    color: transparent;
-    font-size: 3rem;
+#homeAnimation {
+    color: var(--orange);
+    font-size: 1.1rem;
     text-align: center;
-    padding-bottom: 2rem;
 }
-#homeAnimation-buttons {
+
+.container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
 }
-.homeButtons {
-    width: 1rem;
-    height: 1rem;
-    margin: 0rem 1rem;
+
+.chevron {
+    position: absolute;
+    width: 2.1rem;
+    height: 0.48rem;
+    opacity: 0;
+    transform: scale(0.3);
+    -webkit-animation: move-chevron 3s ease-out infinite;
+            animation: move-chevron 3s ease-out infinite;
+}
+
+.chevron:first-child {
+    -webkit-animation: move-chevron 3s ease-out 1s infinite;
+            animation: move-chevron 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+    -webkit-animation: move-chevron 3s ease-out 2s infinite;
+            animation: move-chevron 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background-color: var(--black);
+}
+
+.chevron:before {
+    left: 0;
+    transform: skewY(30deg);
+}
+
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skewY(-30deg);
+}
+
+@-webkit-keyframes move-chevron {
+    25% {
+        opacity: 1;
+    }
+    33.3% {
+        opacity: 1;
+        transform: translateY(2.28rem);
+    }
+    66.6% {
+        opacity: 1;
+        transform: translateY(3.12rem);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(4.8rem) scale(0.5);
+    }
+}
+
+@keyframes move-chevron {
+    25% {
+        opacity: 1;
+    }
+    33.3% {
+        opacity: 1;
+        transform: translateY(2.28rem);
+    }
+    66.6% {
+        opacity: 1;
+        transform: translateY(3.12rem);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(4.8rem) scale(0.5);
+    }
 }
 
 /* *********** ENTER ZONE ********** */
 .enteringBox {
     background-color: var(--orange);
-    padding: 1rem 0;
+    padding: 2rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -124,8 +208,13 @@ section {
 .sectionDescription {
     padding-bottom: 2rem;
 }
-.sectionTitle {
+.sectionTitle-white {
     -webkit-text-stroke: 1px var(--white);
+    color: transparent;
+    font-size: 3rem;
+}
+.sectionTitle-black {
+    -webkit-text-stroke: 1px var(--black);
     color: transparent;
     font-size: 3rem;
 }
@@ -141,7 +230,7 @@ section {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto auto auto;
-    grid-row-gap: 2rem;
+    grid-row-gap: 3rem;
 }
 #projectContainer {
     border: solid 1px var(--white);
@@ -167,6 +256,48 @@ section {
 .projectDescription h3 {
     font-size: 1.25rem;
     padding-bottom: 0.2rem;
+    color: var(--red);
+}
+
+/* project tags */
+.tags {
+    padding-top: 0.75rem;
+    padding-bottom: 0.25rem;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.tag {
+    padding: 0.5rem 0.75rem;
+    background-color: var(--orange);
+    display: inline-block;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    transition: 0.5s ease-in-out;
+}
+.tag:hover {
+    transform: scale(1.05);
+    transition: 0.5s ease-in-out;
+}
+.tag-gap {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.video {
+    background-color: #FFB833;
+}
+.motion {
+    background-color: #8AFC7D;
+}
+.illustration {
+    background-color: #7DE1FC;
+}
+.html {
+    background-color: #C87DFC;
+}
+.javascript {
+    background-color: #FC7DB3;
 }
 
 /* *********** ABOUT ********** */
@@ -176,6 +307,7 @@ section {
 }
 #about p {
     padding-bottom: 1rem;
+    color: var(--black);
 }
 
 /* *********** CONNECT ********** */

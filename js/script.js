@@ -21,19 +21,21 @@ $("header a").click(function (e) {
     $("body, html").animate({scrollTop: idPos}, 1000);
 });
 
+
+
+
 $(document).ready(function() {
     let scrollLink = $('.navItem');
     let projectSectionTop = $('#projects').offset().top;
 
+    // ACTIVE NAV BAR ITEMS
     $(window).scroll(function() {
         // where we are currently on the screen
         let scrollbarLocation = $(this).scrollTop() + $('header').innerHeight() + 5;
 
         scrollLink.each(function(){
-
             // calculate how far from the top each section is REGULARLY
             let sectionOffset = $(this.hash).offset().top;
-
             // adding active class to nav items
             if ( sectionOffset <= scrollbarLocation) {
                 $(this).addClass('active');
@@ -43,7 +45,6 @@ $(document).ready(function() {
             if (scrollbarLocation <= projectSectionTop) {
                 $(this).removeClass('active');
             }
-
         })
     })
 })
