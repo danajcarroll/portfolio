@@ -1,0 +1,295 @@
+.animations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* *********** VIDEO GAMES ********** */
+.videoGames {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    display: none;
+}
+.joyGap {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.leftRemote {
+    height: 8rem;
+    width: 3rem;
+    background-color: #ff4554;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.leftJoy {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background-color: #5e5e5e;
+}
+.leftButtons {
+    position: relative;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+.button {
+    position: absolute;
+    height: 0.75rem;
+    width: 0.75rem;
+    border-radius: 50%;
+    background-color: #5e5e5e;
+    transform: translate(-50%, -50%);
+}
+.button1 {
+    top: 0;
+    left: 50%;
+}
+.button2 {
+    top: 50%;
+    left: 0;
+}
+.button3 {
+    top: 50%;
+    left: 100%;
+}
+.button4 {
+    top: 100%;
+    left: 50%;
+}
+.centerScreen {
+    height: 8rem;
+    width: 12rem;
+    background-color: #5e5e5e;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.actualScreen {
+    height: 7rem;
+    width: 11rem;
+    background-color: #252525;
+}
+.rightRemote {
+    height: 8rem;
+    width: 3rem;
+    background-color: #00c3e3;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* *********** TRAVELLING ********** */
+.travelling {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.airplaneAnimation {
+    position: relative; 
+    width: 100%;
+    height: 100%;
+    background-color: #ffd195;
+    overflow: hidden;
+}
+
+.plane {
+    position: relative;
+    left: 0;
+    top: 0;
+    animation: fly 2s linear infinite;
+}
+
+@keyframes fly {
+    0% {transform: translateY(0);}
+    25% {transform: translateY(-10px);}
+    50% {transform: translateY(0);}
+    75% {transform: translateY(10px);}
+    100% {transform: translateY(0);}
+}
+
+.main {
+    position: absolute;
+    width: 13rem;
+    height: 3rem;
+    background-color: #e65970;
+    top: 4rem;
+    left: 4rem;
+    border-radius: 0 100px 30px 100px; 
+    overflow:hidden;
+    box-shadow: inset -10px -10px rgba(0,0,0,0.2);
+    z-index:2;
+}
+
+.main:before, .main:after {
+    content: "";
+    position: absolute;
+    background-color: #fdc921;
+    top: 1rem;
+}
+
+.main:before {
+    width: 10rem;
+    height: 0.75rem;
+    border-radius: 0 0 0 30px;
+    left: 12rem;
+}
+
+.main:after {
+    width: 5px;
+    height: 10px;
+    border-radius: 1rem;
+    left: 11rem;
+    box-shadow: 
+        -1rem 0 #fdc921, 
+        -2rem 0 #fdc921, 
+        -3rem 0 #fdc921, 
+        -4rem 0 #fdc921, 
+        -5rem 0 #fdc921, 
+        -6rem 0 #fdc921, 
+        -7rem 0 #fdc921, 
+        -8rem 0 #fdc921, 
+        -9rem 0 #fdc921, 
+        -10rem 0 #fdc921;
+}
+
+.wingOne {
+    position: absolute;
+    width: 2rem;
+    border-right: 1.5rem solid transparent;
+    border-left: 1.5rem solid transparent;
+    border-top: 4rem solid #e65970;
+    height: 0;
+    top: 6rem;
+    left: 9rem;
+    transform: skew(-45deg) rotateX(30deg);
+    z-index: 4;
+}
+
+.wingTwo {
+    position: absolute;
+    width: 2rem;
+    border-right: 1.5rem solid transparent;
+    border-left: 1.5rem solid transparent;
+    border-bottom: 4rem solid #ce3750;
+    height: 0;
+    top: 1rem;
+    left: 9rem;
+    transform: skew(45deg) rotateX(30deg);
+}
+
+.wingTwo:after {
+    content:"";
+    position: absolute; 
+    width: 1.5rem;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 35px solid #e65970;
+    height: 0;
+    left: -8rem;
+    top: 2rem;
+}
+
+.wingOne:after {
+    content:"";
+    position: absolute; 
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: #e65970;
+    top: -7rem;
+    left: -10.5rem;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+}
+
+.wingTwo:before {
+    content:"";
+    position: absolute; 
+    width: 1rem;
+    height: 1.25rem;
+    background-color: #ce3750;
+    left: -5rem;
+    top: 2rem;
+    transform: skew(-55deg);
+}
+
+.clouds {
+    position: absolute;
+    top:50px;
+    left:100px;
+}
+
+@keyframes cloud {  
+    from{ 
+    left:-150px; 
+    }
+    to{ 
+    left: 400px; 
+    }
+}
+
+.cloudOne, .cloudTwo, .cloudThree {
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    background-color: #fff;
+    border-radius:100px 100px 0 0;
+}
+
+.cloudOne {
+    top:0;
+    left:0;
+    animation: cloud 3s linear infinite reverse;
+}
+
+.cloudTwo {
+    top:50px;
+    left:100px;
+    animation: cloud 2.5s linear infinite reverse;
+}
+
+.cloudThree {
+    top:250px;
+    left:50px;
+    animation: cloud 2.8s linear infinite reverse;
+}
+
+.cloudOne:before, .cloudTwo:before, .cloudThree:before {
+    content:"";
+    position: absolute;
+    width: 25px;
+    height: 12.5px;
+    background-color: #fff;
+    border-radius:100px 100px 0 0;
+    left:-20px;
+    top:12.5px;
+    box-shadow: 65px 0 #fff;
+}
+
+@keyframes up { 
+    20% {
+        opacity: 0.7;
+    }
+    35% {
+        left: 100px;
+        opacity: 0.7;
+    }
+    70% {
+        left: 70px;
+        opacity: 0;} 
+    }
