@@ -21,7 +21,41 @@ $("header a").click(function (e) {
     $("body, html").animate({scrollTop: idPos}, 1000);
 });
 
-
+// ABOUT ME ANIMATION BUTTONS
+function eraseAnimation() {
+    gsap.to('.hobby', {
+        x: '100%',
+        opacity: 0
+    })
+}
+function eraseText() {
+    gsap.from('.aboutTitle', {
+        x: '-100%',
+        opacity: 0
+    })
+    gsap.from('.hobby', {
+        x: '-100%',
+        opacity: 0
+    })
+    gsap.from('#aboutText', {
+        x: '-100%',
+        opacity: 0
+    })
+}
+function addText() {
+    gsap.from('.aboutTitle', {
+        x: '-100%',
+        opacity: 0
+    })
+    gsap.from('.hobby', {
+        x: '-100%',
+        opacity: 0
+    })
+    gsap.from('#aboutText', {
+        x: '-100%',
+        opacity: 0
+    })
+}
 
 
 $(document).ready(function() {
@@ -37,7 +71,7 @@ $(document).ready(function() {
             // calculate how far from the top each section is REGULARLY
             let sectionOffset = $(this.hash).offset().top;
             // adding active class to nav items
-            if ( sectionOffset <= scrollbarLocation) {
+            if ( sectionOffset <= scrollbarLocation ) {
                 $(this).addClass('active');
                 $(this).siblings().removeClass('active');
             }
@@ -47,4 +81,40 @@ $(document).ready(function() {
             }
         })
     })
+
+    let animateButtons = $('.animate');
+    
+    animateButtons.each(function() {
+        $(this).click(function() {
+            eraseAnimation();
+            eraseText();
+            $(this).addClass('activeButton');
+            $(this).siblings().removeClass('activeButton');
+        })
+    })
+    $('#animation1').click(function() {
+        $('.videoGames').show();
+        $('.travelling').hide();
+        $('.nextHobby').hide();
+        
+        $('.aboutTitle').html('VIDEO GAMES');
+        $('#aboutText').html("I'm a lover of visual novels and point and click adventure games.");
+    })
+    $('#animation2').click(function() {
+        $('.travelling').show();
+        $('.videoGames').hide();
+        $('.nextHobby').hide();
+        
+        $('.aboutTitle').html('TRAVELLING');
+        $('#aboutText').html("I love going to different places, weirdly enough I also love plane food.");
+    })
+    $('#animation3').click(function() {
+        $('.travelling').hide();
+        $('.videoGames').hide();
+        $('.nextHobby').show();
+
+        $('.aboutTitle').html('ROLLERSKATING');
+        $('#aboutText').html("I actually have no clue what this hobby is going to be just yet.");
+    })
+
 })

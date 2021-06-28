@@ -318,6 +318,7 @@ section {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
+    overflow: hidden;
 }
 .title {
     font-size: 2rem;
