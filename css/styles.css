@@ -328,18 +328,36 @@ section {
 .animations {
     background-color: var(--white);
     height: 12rem;
+    width: 100%;
 }
 #aboutAnimation .mainText {
     color: var(--white);
     padding: 0.3rem;
 }
+.videoGames {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.videoGames iframe {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
 
 /* *********** CONNECT ********** */
 #connect {
     background-color: var(--black);
-    height: 90vh;
+    height: 60vh;
 }
 #connect h3 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     color: var(--red);
 }

@@ -57,7 +57,6 @@ function addText() {
     })
 }
 
-
 $(document).ready(function() {
     let scrollLink = $('.navItem');
     let projectSectionTop = $('#projects').offset().top;
@@ -106,14 +105,14 @@ $(document).ready(function() {
         $('.nextHobby').hide();
         
         $('.aboutTitle').html('TRAVELLING');
-        $('#aboutText').html("I love going to different places, weirdly enough I also love plane food.");
+        $('#aboutText').html("I love going to different places, I also love plane food.");
     })
     $('#animation3').click(function() {
         $('.travelling').hide();
         $('.videoGames').hide();
         $('.nextHobby').show();
 
-        $('.aboutTitle').html('ROLLERSKATING');
+        $('.aboutTitle').html('SKATING');
         $('#aboutText').html("I actually have no clue what this hobby is going to be just yet.");
     })
 
